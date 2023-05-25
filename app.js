@@ -7,13 +7,13 @@ const server =http.createServer(app)
 const {Server} = require('socket.io')
 const io =   new Server(server)
 
-io.on('connection', (socket) =>{
-    console.log('Usuario conectado')
-    socket.on('chat',(msg)=>{
-        io.emit('chat', msg)
-    })
-    
-})
+    io.on('connection', (socket) => {
+        console.log('Usuario conectado');
+        socket.on('chat', (msg) => {
+          io.emit('chat', msg);
+        });
+      });
+ 
 
 server.listen(3000, () =>{
     console.log('Servidor corriendo en localhost:3000')
